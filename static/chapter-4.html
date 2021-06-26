@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="css/chapter-4.css" />
+    <script src="https://use.fontawesome.com/d6cddd4a49.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span
+          ><i class="back-icon fa fa-chevron-left" aria-hidden="true"></i></span
+        ><span>LOGO</span>ROCK PAPER SCISSORS
+      </h1>
+    </header>
+
+    <div class="play-area">
+      <div class="left-section">
+        <p class="user-label">PLAYER 1</p>
+        <div class="choices">
+          <div class="choice" id="r">
+            <img src="images/rock.png" alt="Rock" height="100%" width="100%" />
+          </div>
+          <div class="choice" id="p">
+            <img
+              src="images/paper.png"
+              alt="Paper"
+              height="100%"
+              width="100%"
+            />
+          </div>
+          <div class="choice" id="s">
+            <img
+              src="images/scissors.png"
+              alt="Scissors"
+              height="100%"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="middle-section">
+        <!-- refresh image and vs text -->
+        <div class="result">
+          <p>VS</p>
+        </div>
+        <div class="flip-container">
+          <div class="refresh-icon">
+            <img
+              class="flip-this"
+              onclick="reloadGame()"
+              src="./images/refresh.png"
+              alt="refresh"
+              srcset=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="right-section">
+        <p class="user-label">COM</p>
+        <div class="choices">
+          <div class="choice" id="r-com">
+            <img src="images/rock.png" alt="Rock" height="100%" width="100%" />
+          </div>
+          <div class="choice" id="p-com">
+            <img
+              src="images/paper.png"
+              alt="Paper"
+              height="100%"
+              width="100%"
+            />
+          </div>
+          <div class="choice" id="s-com">
+            <img
+              src="images/scissors.png"
+              alt="Scissors"
+              height="100%"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <script>
+      let result_div = document.querySelector(".result");
+
+      let body = window.document.styleSheets[0];
+      const rock_div = document.getElementById("r");
+      const paper_div = document.getElementById("p");
+      const scissors_div = document.getElementById("s");
+      const newEl = document.createElement("div");
+
+      function getCPUchoice() {
+        const choices = ["Rock", "Paper", "Scissors"];
+        const randNum = Math.floor(Math.random() * 3); // Generate random # between 0-2.
+        return choices[randNum]; // Returns value of array slot based on randNum
+      }
+      function win(userChoice, cpuChoice) {
+        //body.deleteRule('body { background: red; transition: all 0.5s ease;}'); -- Gets rid of css rules and slowly destroys the page, FUN!
+        // body.insertRule('body {background-color: #003300; transition: all 0.7s ease;}', body.cssRules.length);
+        // body.insertRule('#user-label {background: green; transition: all 0.5s ease;}', body.cssRules.length);
+
+        result_div.innerHTML = `<div class="player-win">
+  <p>PLAYER 1 WIN</p>
+</div>`;
+
+        // result_div.innerHTML =  userChoice + " beats " + cpuChoice + ". You win!";
+        //result_div = "10 Wins?! Let's go champ!";
+      }
+      function lose(userChoice, cpuChoice) {
+        // body.insertRule('body {background-color: #990000; transition: all 0.7s ease;}', body.cssRules.length);
+        // body.insertRule('#user-label {background: red; transition: all 0.5s ease;}', body.cssRules.length);
+
+        result_div.innerHTML = `<div class="com-win">
+  <p>COM WIN</p>
+</div>`;
+      }
+      function draw(userChoice, cpuChoice) {
+        result_div.innerHTML = `<div class="draw">
+  <p>DRAW</p>
+</div>`;
+        // body.insertRule('body {background: #292C34; transition: all 1s ease;}', body.cssRules.length);
+        // body.insertRule('#user-label {background: #E2584D; transition: all 0.5s ease;}',
+        // body.cssRules.length);
+      }
+
+      function game(userChoice) {
+        const cpuChoice = getCPUchoice();
+        // console.log("user choice " + userChoice);
+        // console.log("cpu choice " + cpuChoice);
+        switch (userChoice + cpuChoice) {
+          case "RockScissors":
+          case "PaperRock":
+          case "ScissorsPaper":
+            win(userChoice, cpuChoice);
+            break;
+          case "RockPaper":
+          case "PaperScissors":
+          case "ScissorsRock":
+            lose(userChoice, cpuChoice);
+            break;
+          case "RockRock":
+          case "PaperPaper":
+          case "ScissorsScissors":
+            draw(userChoice, cpuChoice);
+            break;
+        }
+      }
+
+      function reloadGame() {
+        location.reload();
+      }
+
+      function main() {
+        rock_div.addEventListener("click", function () {
+          game("Rock");
+        });
+        paper_div.addEventListener("click", function () {
+          game("Paper");
+        });
+        scissors_div.addEventListener("click", function () {
+          game("Scissors");
+        });
+      }
+
+      // First one to 20!
+      // if (cpuScore === 20){
+      //   cpuScore = 0;
+      //   result_div.innerHTML = `Round Over! CPU wins!`;
+      //   break;
+      // }
+      // else{
+      //   cpuScore++;
+      // }
+
+      // if (userScore === 20){
+      //   userScore = 0;
+      // }
+      // else{
+      //   userScore++;
+      // }
+
+      main();
+    </script>
+    <!-- <div class="result">
+      <p></p>
+    <br /><br />
+    <!-- <a href="https://emojipedia.org">*here's the images used for the hands ></a> -->
+    <!-- <a href="https://www.youtube.com/watch?v=JOpedahoKoc">Paper Sound Effects</a> -->
+    <script src="scripts/app.js" charset="utf-8"></script>
+  </body>
+</html>

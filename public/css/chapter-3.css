@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+.header-section {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(../images/main-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-text h1 {
+  font-size: 72px;
+  color: #fff;
+}
+
+.hero-text p {
+  font-size: 20px;
+  color: #fff;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.nav-brand {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-weight: 500;
+  color: #edf0f1;
+  text-decoration: none;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  padding-right: 22rem;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+  font-size: 12px;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #f3af34;
+}
+.nav-brand {
+  color: #fff;
+}
+.cta {
+  padding: 9px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+  background: linear-gradient(194.68deg, #ffb548 11.27%, #f3af34 90.4%);
+  border-radius: 4px;
+  color: #000;
+}
+
+.play-btn {
+  display: inline-block;
+  width: 210px;
+
+  text-decoration: none;
+  color: #000;
+  border: none;
+  padding: 15px 34px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+  background: linear-gradient(194.68deg, #ffb548 11.27%, #f3af34 90.4%);
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+.play-btn:hover {
+  transform: scale(0.9);
+}
+
+.story-button {
+  bottom: 0px;
+  color: #fff;
+  text-align: center;
+  margin: 280px 0 0 0;
+  padding: 10px;
+}
+
+.first-story {
+  background-image: url(../images/the-games-bg.jpg);
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.first-story-content {
+  padding-top: 130px;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.first-story-content img {
+  width: 858px;
+}
+
+.first-story-text {
+  padding-bottom: 450px;
+}
+
+.first-story-text h2 {
+  font-size: 56px;
+}
+.first-story-text p {
+  font-size: 24px;
+}
+
+.second-story {
+  background-image: url(../images/features.jpg);
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.second-story > .content {
+  padding-top: 250px;
+  padding-left: 51rem;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+}
+.second-story-text {
+  padding-right: 20rem;
+}
+.second-story-text h2 {
+  font-size: 56px;
+}
+.second-story-text p {
+  font-size: 24px;
+}
+
+.feature > ul > li > h3 {
+  color: #ffb548;
+}
+
+.feature > ul > li {
+  padding-bottom: 30px;
+}
+
+.third-story {
+  background-image: url(../images/requirements.png);
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+.third-story > .content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-top: 100px;
+}
+
+table,
+th,
+td {
+  border: 0.1px solid #979797;
+}
+
+.fourth-story {
+  background: radial-gradient(
+    70.52% 37.27% at 24.21% 47.47%,
+    rgba(35, 15, 15, 0) 0%,
+    rgba(0, 0, 0, 0) 51.1%,
+    #080a0b 99.74%
+  );
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+
+.fifth-story {
+  background-color: black;
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
